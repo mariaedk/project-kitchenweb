@@ -1,0 +1,66 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+
+    <!-- breakfast -->
+    <h1>For <span class="highlight">breakfast</span></h1>
+    <div class="col-lg-4" *ngFor="let fd of foodDataBreakfast; index as i">
+      <div class="foodbox mt-4 mb-4 " *ngIf="i<=2">
+        <div class="info">
+          <img src="{{ fd.foodImg }}" alt="">
+          <h1>{{ fd.foodName }}</h1>
+          <p class="card-subtitle mb-2 text-muted">{{ fd.foodDetails }}</p>
+          <p >{{ fd.foodPrice | currency:'BRL' }}</p>
+        </div>
+      </div>
+      <a class="buybtn" [routerLink]="['/menu',fd.id]">Buy now &nbsp;<i class="bi bi-bag-heart-fill"></i></a>
+    </div>
+
+    <hr class="my-5 mt-5">
+
+    <!-- lunch -->
+    <h1 class="mt-2">For <span class="highlight">lunch</span></h1>
+    <div class="col-lg-4" *ngFor="let fd of foodDataLunch; index as i">
+      <div class="foodbox mt-4 mb-4 " *ngIf="i<=2">
+        <div class="info">
+          <img src="{{ fd.foodImg }}" alt="">
+          <h1>{{ fd.foodName }}</h1>
+          <p class="card-subtitle mb-2 text-muted">{{ fd.foodDetails }}</p>
+          <p >{{ fd.foodPrice | currency:'BRL' }}</p>
+        </div>
+      </div>
+      <a class="buybtn" [routerLink]="['/menu',fd.id]">Buy now &nbsp;<i class="bi bi-bag-heart-fill"></i></a>
+    </div>
+
+    <hr class="my-5 mt-5">
+
+    <!-- dinner -->
+    <h1 class="mt-2">For <span class="highlight">dinner</span></h1>
+    <div class="col-lg-4" *ngFor="let fd of foodDataDinner; index as i">
+      <div class="foodbox mt-4 mb-4 " *ngIf="i<=2">
+        <div class="info">
+          <img src="{{ fd.foodImg }}" alt="">
+          <h1>{{ fd.foodName }}</h1>
+          <p class="card-subtitle mb-2 text-muted">{{ fd.foodDetails }}</p>
+          <p >{{ fd.foodPrice | currency:'BRL' }}</p>
+        </div>
+      </div>
+      <a class="buybtn" [routerLink]="['/menu',fd.id]">Buy now &nbsp;<i class="bi bi-bag-heart-fill"></i></a>
+    </div>
+
+    <hr class="my-5 mt-5">
+
+    <!-- dessert -->
+    <h1 class="mt-2">For <span class="highlight">dessert</span></h1>
+    <div class="col-lg-4 mb-5" *ngFor="let fd of foodDataDessert; index as i">
+      <div class="foodbox mt-4 mb-4 " *ngIf="i<=2">
+        <div class="info">
+          <img src="{{ fd.foodImg }}" alt="">
+          <h1>{{ fd.foodName }}</h1>
+          <p class="card-subtitle mb-2 text-muted">{{ fd.foodDetails }}</p>
+          <p >{{ fd.foodPrice | currency:'BRL' }}</p>
+        </div>
+      </div>
+      <a class="buybtn" [routerLink]="['/menu',fd.id]">Buy now &nbsp;<i class="bi bi-bag-heart-fill"></i></a>
+    </div>
+
+</div>

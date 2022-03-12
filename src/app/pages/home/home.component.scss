@@ -1,0 +1,143 @@
+.banner
+{
+  background-image: url('../../../assets/_img/banner-img.jpg');
+  min-height: 100vh;
+  background-position: center top;
+  background-size: cover;
+}
+
+.content
+{
+  top: 15%;
+  left: 65%;
+  position: absolute;
+}
+
+.content h1
+{
+  color: crimson;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.205);
+}
+
+.btn-home
+{
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  border: 0.5px solid black;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.btn-home:hover
+{
+  color: crimson;
+  transition: .5s;
+  background-color: rgba(255, 255, 255, 0.726);
+}
+
+.info
+{
+  margin-top: 13em;
+  margin-bottom: 13em;
+}
+
+.stepBox
+{
+  background-color: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.103);
+  padding: 50px 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 1.2em rgba(0, 0, 0, 0.096);
+}
+
+.stepBox:hover
+{
+  transition: .3s;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, 0.096);
+}
+
+
+.stepBox h2
+{
+  font-size: 50px;
+  font-weight: bold;
+  color: crimson;
+}
+
+.stepBox p
+{
+  font-style: italic;
+  color: black;
+}
+
+.highlight
+{
+  color: var(--primary-color);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.foodbox
+{
+  padding: 10px 5px;
+}
+
+.foodbox img
+{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.foodbox h1
+{
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.card-subtitle
+{
+  font-style: italic;
+}
+
+.viewmore-btn
+{
+  text-decoration: none;
+  background-color: #000;
+  color: crimson;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (max-width:600px)
+{
+  .banner
+  {
+    background-image: url('https://images.pexels.com/photos/262896/pexels-photo-262896.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    height: 700px;
+  }
+
+  .content
+  {
+    left: 25%;
+    right: 25%;
+    top: 20%;
+  }
+
+  .content h1
+  {
+    font-size: 30px;
+    color: black;
+  }
+}
+

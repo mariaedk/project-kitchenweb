@@ -1,0 +1,24 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-6" *ngIf="menuData">
+      <div class="form-info-food">
+        <h1 class="mt-3">{{ menuData[0].foodName }}</h1>
+        <p class="lead">{{ menuData[0].foodDetails }}</p>
+        <p class="preco-comida mb-2">{{ menuData[0].foodPrice | currency:'BRL' }}</p>
+        <img src="{{ menuData[0].foodImg }}" alt="">
+        <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3 mt-4">Back</a>
+      </div>
+    </div>
+
+  <div class="col-lg-6">
+    <div class="form-buy">
+      <h1 class="mt-3">Enter Your Details</h1>
+      <form action="">
+        <input type="text" class="form-control" placeholder="Enter Your Full Name">
+        <input type="text" class="form-control" placeholder="Enter Your Phone Number">
+        <textarea class="form-control" placeholder="Enter Your Adress"></textarea>
+        <button class="btn btn-md btn-dark mt-3">Place Order</button>
+      </form>
+    </div>
+  </div>
+</div>
