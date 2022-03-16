@@ -6,17 +6,40 @@
         <p class="lead">{{ menuData[0].foodDetails }}</p>
         <p class="preco-comida mb-2">{{ menuData[0].foodPrice | currency:'BRL' }}</p>
         <img src="{{ menuData[0].foodImg }}" alt="">
-        <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3 mt-4">Back</a>
+        <a routerLink="../../menu" class="btn btn-sm btn-dark mb-3 mt-3">Back</a>
       </div>
     </div>
 
   <div class="col-lg-6">
     <div class="form-buy">
       <h1 class="mt-3">Enter Your Details</h1>
+
       <form action="">
         <input type="text" class="form-control" placeholder="Enter Your Full Name">
+
         <input type="text" class="form-control" placeholder="Enter Your Phone Number">
-        <textarea class="form-control" placeholder="Enter Your Adress"></textarea>
+
+        <input type="text" (blur)="getViaCEP($event)" class="form-control" name="cep" placeholder="CEP">
+
+      <!-- ENDEREÇO - API -->
+      <!-- quando o showform for true ele vai exibir -->
+        <div *ngIf="showForm | async " name="retorno-cep">
+            <input type="text" class="form-control" name="rua" [(ngModel)]="formContato.logradouro" placeholder="Enter Your Phone Number">
+
+            <input type="text" class="form-control" name="numero" placeholder="House Number" [(ngModel)]="formContato.numero">
+
+            <input type="text" class="form-control" name="bairro" [(ngModel)]="formContato.bairro">
+
+            <input type="text" class="form-control" name="cidade" placeholder="City" [(ngModel)]="formContato.localidade">
+
+            <input type="text" class="form-control" name="uf" placeholder="UF" [(ngModel)]="formContato.uf">
+        </div>
+        <p class="lead text-muted mb-2 mt-2">Pay through: PIX: 00-00-00-00</p>
+        <div class="alert alert-info">
+          Your order will be placed when the payment is confirmed.
+          <br>You will receive confirmation through SMS.
+          <br>Make sure your phone number is correct.
+        </div>
         <button class="btn btn-md btn-dark mt-3">Place Order</button>
       </form>
     </div>

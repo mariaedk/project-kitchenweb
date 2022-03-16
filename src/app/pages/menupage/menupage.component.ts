@@ -1,6 +1,11 @@
+import { ViaCepApiService } from './../../services/via-cep-api.service';
+import { ViaCep } from './../../models/via-cep';
 import { OrderDetailsService } from './../../services/order-details.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-menupage',
@@ -9,7 +14,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenupageComponent implements OnInit {
 
-  constructor(private param: ActivatedRoute, private service: OrderDetailsService) { }
+  formContato: ViaCep = {};
+
+  showForm = new Subject<boolean>();
+
+  cepInput: string = '';
+
+  constructor(private param: ActivatedRoute, private service: OrderDetailsService, private cepService: ViaCepApiService) { }
   getMenuId:any;
   menuData:any;
 
@@ -42,6 +53,26 @@ export class MenupageComponent implements OnInit {
           return value.id == this.getMenuId;
         });
       }
+    }
+  }
+
+  getViaCEP(cep: FocusEvent)
+  {
+    if ((cep.target as HTMLInputElement)?.value)
+    {
+      let inputCEP = (cep.target as HTMLInputElement)?.value;
+
+      console.log(inputCEP);
+
+      const cepResponse = this.cepService.getCep(inputCEP);
+
+      cepResponse.subscribe(
+        (cepModel) =>
+        {
+          this.formContato = cepModel;
+          this.showForm.next(true);
+        }
+      )
     }
   }
 }
